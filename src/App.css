@@ -1,20 +1,24 @@
-.App {
-  text-align: center;
+.block{
+    position:absolute;
+    left:0;
+    bottom:0;
+    right:0;
+    top:0;
+    background:rgba(255,255,255, 0.7);
+    padding:5px;
+    display:none;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.back {
+  position: absolute;
+  height: 100%;
+  width: 100vw;
+  z-index: 0;
+  min-height: 550px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.bannerPage {
+  background-color: white;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -24,15 +28,233 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.banner {
+  border-radius: 8px;
+  box-shadow: 0px 0px 3px 0px white;
+  height: 70vh;
+  width: 70%;
+  background: #636363a8;
+  position: relative;
+  opacity: 0.89;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 380px;
+  min-width: 340px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.banner:hover{
+  opacity: 1;
+  transition: 0.15s;
+}
+
+.bannerHeader{
+  background: #330038;
+  border-radius: 8px 8px 0px 0px;
+  padding: 10px;
+  text-align: center;
+}
+
+.actionsWithBanner{
+  display: flex;
+  width: 100%;
+  flex: 1;
+}
+
+.bannerButtons{
+  width: 20%;
+  background-color: #282c34;
+  height: 100%;
+  border-radius: 0px 0px 0px 8px;
+  min-width: 70px;
+}
+
+button{
+  color: black;
+  font-size: 20px;
+  width: 90%;
+  margin-left: 5%;
+  border-radius: 6px;
+  opacity: 0.7;
+  margin-top: 3vh;
+  text-decoration: none;
+}
+
+a{
+  text-decoration: none;
+  color: black;
+}
+
+button:hover{
+  opacity: 1;
+  box-shadow: 0px 0px 3px 0px white;
+  transition: 0.2s;
+}
+
+.previev{
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3vh;
+  min-height: 310px;
+}
+
+.downloadPicture{
+  Width: 40vw;
+  height: 40vh;
+  border: 3px dashed white;
+  position: relative;
+  border-radius: 20px;
+  text-align: center;
+  font-size: 16px;
+  color:lightgray;
+  min-height: 225px;
+  min-width: 230px;
+}
+
+.downloadPicture:hover{
+  box-shadow: 0px 0px 6px 0px white;
+  transition: 0.35s;
+}
+
+.downloadPicture img{
+  margin-top: 4vh;
+  border:3px red solid;
+}
+
+.lake {
+  text-align: center;
+  display: inline-block;
+  overflow: hidden;
+  position: relative;
+  text-decoration: none;
+}
+.lake:before {
+  display: block;
+  background-color: rgb(0, 0, 0);
+  content: "";
+  height: 100%;
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+  z-index: 2;
+}
+
+.lake:after {
+  font-family: 'Lucida Console';
+  color: white;
+  content: attr(alt);
+  display: block;
+  font-size: 16px;
+  opacity: 0;
+  padding: 0 3%;
+  position: absolute;
+  text-transform: none;
+  top: 50%;
+  -webkit-transform-origin: 50% 0%;
+  transform-origin: 50% 0%;
+  -webkit-transform: scale(0) translateY(-50%);
+  transform: scale(0) translateY(-50%);
+  width: 94%;
+  z-index: 3;
+}
+
+.lake img {
+  border: none;
+  display: block;
+  z-index: 1;
+}
+
+.lake:after {
+  -webkit-transition: all 350ms ease-in-out;
+  transition: all 350ms ease-in-out;
+}
+
+.lake:hover:before {
+  opacity: 0.6;
+}
+
+.lake:hover:after {
+  opacity: 1;
+  -webkit-transform: scale(1) translateY(-50%);
+  transform: scale(1) translateY(-50%);
+}
+
+.pictureAlreadyDownload div img{
+  max-height: 35vh;
+}
+
+.pictureAlreadyDownload div{
+  text-align: center;
+}
+.string{
+  display: flex;
+  text-align: center;
+  padding-left: 1vw;
+  padding-right: 1vw;
+  position:absolute;
+  bottom:2vh;
+  width: 94%;
+}
+
+#in{
+  display: inline-block;
+  border: none;
+  outline: none;
+  background: url("./media/photoDownload.png") no-repeat;
+  width: 70px;
+  height: 70px;
+  cursor: pointer;
+  font-size: 0px;
+  margin-top: 7vh;
+}
+
+#addHttp{
+  width: 80%;
+  border-radius: 8px 0px 0px 8px;
+}
+
+
+.addHttpPicture{
+  width: 45px;
+  height: 30px;
+  margin: 0px;
+  border-radius: 0px 8px 8px 0px ;
+  width: 30%;
+}
+textarea {
+  margin-top: 2vh;
+  Width: 40vw;
+  height: 8vh;
+  background: #636363a8;
+  line-clamp: 3;
+}
+textarea:hover{
+  box-shadow: 0px 0px 6px 0px white;
+}
+
+.input{
+  opacity: 0.2;
+  font-size: 18px;
+  margin-left: 14%;
+  opacity: 0.7;
+  margin-top: 3vh;
+  color: rgba(0,0,0,0)
+}
+
+.in {
+  opacity: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+label {
+  cursor: pointer;
+}
+
+.textarea{
+font-size: 20px;
+color: white;
+overflow:hidden;
+resize:none;
+min-height: 68px;
 }
