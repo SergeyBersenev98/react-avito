@@ -10,7 +10,7 @@ To run this project, install it localy using npm:
 
 ```shell
 $ git clone https://github.com/SergeyBersenev98/react-avito
-$ cd react-avito/
+$ cd ./react-avito
 $ npm install
 $ npm run dev
 ```
